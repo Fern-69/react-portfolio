@@ -42,7 +42,8 @@ export default class PortfolioContainer extends Component {
             return <PortfolioItem 
                 key={item.id}
                 title={item.name} 
-                description={item.description} 
+                description={item.description}
+                category={item.category}
                 url={item.url} 
                 slug={item.id} />;
         });
