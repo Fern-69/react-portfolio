@@ -3,14 +3,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function(props) {
-    return (
-        <div>
-            <h3>{props.title}</h3>
-            <h4>{props.description}</h4>
-            <h4>{props.url}</h4>
-            <h4>{props.category}</h4>
+    //Datos que necesitamos:
+        // -Imagen de fondo (Background): thumb_image_url
+        // -Logo: logo_url
+        // -Descripción del elemento del portafolios: description
+        // -id (identificación): id
+        // "id", "name", "description", "url", "category", "position", "thumb_image_url", "banner_image_url", "logo_url", "column_names_merged_with_images"
 
-            <Link to={`/portfolio/${props.slug}`}>Link</Link>
+        const { id, description, thumb_image_url, logo_url} = props.item;   
+    return (
+        <div className="portfolio-item-wrapper">
+            <img src={thumb_image_url} />
+            <img src={logo_url} />
+            <div>{description}</div>
+            <Link to={`/portfolio/${id}`}>Link</Link>
         </div>
     );
 }
